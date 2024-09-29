@@ -1,0 +1,33 @@
+Notes
+
+
+The distance is always maxed somewhere between the start and the end. 
+
+formal for distance:
+x(t) = v(t) *  t
+
+formal adapted to this usecase
+
+v(t) = 0 for t <= t_charge
+v(t) = t for t > t_charge
+
+=> start the function after t_charge
+and only looking at the end distance
+
+x_end= t_charge * t_running           | t_charge = t_all -t_running
+x_end= (t_all - t_running)*t_running
+x_end = t_all * t_running - t_running²
+t_running²-t_all * t_running +x_end = 0
+
+
+t_running_1 = t_all-sqrt((-t_all)²-4*1*x_end)/2
+t_running_2 = t_all+sqrt((-t_all)²-4*1*x_end)/2
+
+t_all of the race and the x_end distance of the record holder are given.
+With this it is possible to calculate both possibilities, when the record holder released the button
+
+This function (t_running²-t_all * t_running +x_end = 0) is quadratic and therefore a curve with no directional change and a maximum
+So all times between t_running_1 and t_running_2 will produce an higher max distance
+
+
+
